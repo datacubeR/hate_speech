@@ -1,0 +1,6 @@
+.vscode
+demo_data
+*.zip
+__pycache__
+submissions
+
