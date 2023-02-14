@@ -3,4 +3,8 @@ demo_data
 *.zip
 __pycache__
 submissions
+lightning_logs
+pseudolabels
+legacy
+checkpoints
 

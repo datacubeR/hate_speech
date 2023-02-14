@@ -1,4 +1,4 @@
-## Hate Speech Recognition para Datathon
+## Hate Speech en Redes Sociales Chilenas
 
 En este proyecto se busca generar un modelo de Machine Learning capaz de detectar odio en Tweets.
 
