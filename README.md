@@ -1,20 +1,20 @@
 ## Hate Speech en Redes Sociales Chilenas
 
-En este proyecto se busca generar un modelo de Machine Learning capaz de detectar odio en Tweets.
+Este corresponde al código del fine-tuning de RoBERTuito utilizado en la Datathon 2022. 
 
-Además del Odio, se quiere detectar discriminación hacia:
+La competencia tenía como objetivo predecir las siguientes clases, representativas de presencia de Odio, y si menciona alguna de las siguientes comunidades vulnerables:
 
+* Odio
 * Mujeres
 * Comunidad LGBTQ+
 * Comunidades Migrantes
 * Pueblos Originarios
 
-Se realizarán varias técnicas para determinar cuál es el mejor algoritmo para resolver esta tarea.
+Durante la competencia la verdad es que no obtuve buenos resultados utilizando este modelo, pero sí es un excelente ejercicio de aprendizaje, y por eso lo comparto. 
 
-Los algoritmos a probar son: 
+Si les gustó o si aprendieron algo, les pido me puedan dar una estrellita.
 
-* Random Forest.
-* Extra Trees.
-* Gradient Boosting.
-* RoberTuito.
+## Disclaimer
+
+> Lamentablemente no sé si tengo permiso para poder compartir el archivo de test etiquetado. Todo el resto lo comparto (incluyendo el set de Test sin etiquetar) ya que fueron públicos al momento de competir. 
 

@@ -1,10 +1,10 @@
-import pytorch_lightning as pl
+import lightning as L
 import torch
 import torch.nn as nn
 from transformers import AutoModel
 
 
-class RoberTuito(pl.LightningModule):
+class RoberTuito(L.LightningModule):
     def __init__(self, config):
         super().__init__()
 
@@ -27,13 +27,15 @@ class RoberTuito(pl.LightningModule):
     
     def training_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        loss = self.criterion(logits, batch["labels"])
+        labels = batch["labels"].reshape(-1,1)
+        loss = self.criterion(logits, labels)
         self.log("train_loss", loss, prog_bar=True, logger=False)
         return loss
     
     def validation_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        loss = self.criterion(logits, batch["labels"])
+        labels = batch["labels"].reshape(-1,1)
+        loss = self.criterion(logits, labels)
         self.log("val_loss", loss, prog_bar=True, logger=False)
         return loss
 

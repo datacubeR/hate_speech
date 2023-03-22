@@ -1,7 +1,11 @@
+# * Hola
+
+
 import numpy as np
-import pytorch_lightning as pl
+import lightning as L
 import torch
-from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
+from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
+
 from sklearn.metrics import f1_score
 
 from .datamodule import HateDataModule
@@ -28,7 +32,7 @@ def train_model(fold: list, dm_config, model_config, training_config):
         patience=training_config.patience,
     )
 
-    trainer = pl.Trainer(
+    trainer = L.Trainer(
         deterministic=True,
         callbacks=[mc, early_stop_callback],
         max_epochs=training_config.max_epochs,

@@ -7,4 +7,7 @@ lightning_logs
 pseudolabels
 legacy
 checkpoints
-
+*.csv
+*.tar
+Hate_Stack.ipynb
+Datathon-2022-full

@@ -1,15 +1,15 @@
-import pytorch_lightning as pl
+import lightning as L
 import pandas as pd
 from .dataset import HateDataset
 from torch.utils.data import DataLoader
 
-class HateDataModule(pl.LightningDataModule):
+class HateDataModule(L.LightningDataModule):
     def __init__(
         self, 
         train: pd.DataFrame,
         labels: list,
         fold: int,
-        batch_size: int,
+        batch_size: list,
         tokenizer: str,
         max_token_len: int = 128,
         test: pd.DataFrame = None):
