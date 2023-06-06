@@ -24,17 +24,17 @@ class RoberTuito(L.LightningModule):
         x = self.classifier(x)
 
         return x
-    
+
     def training_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        labels = batch["labels"].reshape(-1,1)
+        labels = batch["labels"].reshape(-1, 1)
         loss = self.criterion(logits, labels)
         self.log("train_loss", loss, prog_bar=True, logger=False)
         return loss
-    
+
     def validation_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        labels = batch["labels"].reshape(-1,1)
+        labels = batch["labels"].reshape(-1, 1)
         loss = self.criterion(logits, labels)
         self.log("val_loss", loss, prog_bar=True, logger=False)
         return loss
@@ -42,9 +42,9 @@ class RoberTuito(L.LightningModule):
     def predict_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
         return logits
-    
+
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(self.parameters(), lr=self.config.lr, weight_decay=self.config.w_decay)
+        optimizer = torch.optim.AdamW(
+            self.parameters(), lr=self.config.lr, weight_decay=self.config.w_decay
+        )
         return optimizer
-    
-    
