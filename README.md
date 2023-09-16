@@ -1,20 +1,17 @@
-## Hate Speech en Redes Sociales Chilenas
+## Hate Speech Recognition in Chilean Tweets
 
-Este Repo corresponde a la Reproducción de los Códigos probados durante la
-Datathon 2022. Los códigos han sido optimizados y ordenados de modo de tener
-mejor legibilidad.
+This Repo contains all the code utilized in [Hate Speech Recognition in Chilean Tweets
+](). Our paper proposes a novel Stack Generalization model to detect Hate in Chilean Slang. All the code was developed in the Context of the USM Datathon 2022. 
 
-La competencia tenía como objetivo predecir las siguientes clases,
-representativas de presencia de Odio, y si menciona alguna de las siguientes
-comunidades vulnerables:
+The aim of the competition was to predict if Hate was present in a Tweet plus detecting a community targeted by the Hate. The labels present in the dataset are the following: 
 
-* Odio
-* Mujeres
-* Comunidad LGBTQ+
-* Comunidades Migrantes
-* Pueblos Originarios
+* Hate
+* Women
+* LGBTQ+ Community
+* Immigrants
+*Indigenous People
 
-Los modelos probados a lo largo de la competencia fueron:
+The models using during the Experimentation process were the following: 
 
 * Naive Bayes
 * Random Forest
@@ -22,24 +19,4 @@ Los modelos probados a lo largo de la competencia fueron:
 * XGboost
 * LightGBM
 * Catboost
-* Robertuito
-
-Lamentablemente, los resultados obtenidos con Robertuito fueron bastante malos,
-pero se puede ver que a pesar de eso, los resultados para la detección de Odio
-(tarea en la que fue efectivamente pre-entrenado) es bastante aceptable. A
-pesar de eso, el ejercicio de hacer fine-tunning en un Transformer fue de mucho
-aprendizaje.
-
-Los resultados mostrados acá no son exactamente los obtenidos en la
-competencia, ya que a lo largo de la competencia nunca tuve acceso al dataset
-de test etiquetado. De hecho, al parecer mis experimentos terminaron teniendo
-mejores resultados de lo que yo iba pensando mientras competía.
-
-Si les gustó o si aprendieron algo, les pido me puedan dar una estrellita.
-
-## Disclaimer
-
-La obtención de los datasets de entrenamiento y test fueron un esfuerzo de los
-trabajos de Tesis de varios alumnos de la Universidad Técnica Federico Santa
-María. En caso de usarlos, por favor dar el crédito correspondiente.
-
+* RoberTuito

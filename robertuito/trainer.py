@@ -1,12 +1,9 @@
-# * Hola
-
-
 import numpy as np
 import lightning as L
 import torch
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, precision_score, recall_score
 
 from .datamodule import HateDataModule
 from .model import RoberTuito
@@ -65,6 +62,14 @@ def evaluate(trainer, model, dm, threshold=0.5, custom=True):
     preds = np.where(predict(trainer, model, dm, validation=True) >= threshold, 1, 0)
 
     if custom:
-        return f1_custom(y, preds)
+        return (
+            f1_custom(y, preds),
+            precision_score(y, preds, average="macro"),
+            recall_score(y, preds, average="macro"),
+        )
     else:
-        return f1_score(y, preds)
+        return (
+            f1_score(y, preds),
+            precision_score(y, preds, average="macro"),
+            recall_score(y, preds, average="macro"),
+        )

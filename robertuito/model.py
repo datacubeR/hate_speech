@@ -27,14 +27,15 @@ class RoberTuito(L.LightningModule):
 
     def training_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        labels = batch["labels"].reshape(-1, 1)
+        labels = batch["labels"]
+
         loss = self.criterion(logits, labels)
         self.log("train_loss", loss, prog_bar=True, logger=False)
         return loss
 
     def validation_step(self, batch, batch_idx):
         logits = self(batch["input_ids"], batch["attention_mask"])
-        labels = batch["labels"].reshape(-1, 1)
+        labels = batch["labels"]
         loss = self.criterion(logits, labels)
         self.log("val_loss", loss, prog_bar=True, logger=False)
         return loss
