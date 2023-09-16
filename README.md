@@ -9,7 +9,7 @@ The aim of the competition was to predict if Hate was present in a Tweet plus de
 * Women
 * LGBTQ+ Community
 * Immigrants
-*Indigenous People
+* Indigenous People
 
 The models using during the Experimentation process were the following: 
 
